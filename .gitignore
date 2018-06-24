@@ -25,3 +25,10 @@ node_modules
 **/.sass-cache/
 
 .DS_Store
+venv
+.idea
+__pycache__/
+.pytest_cache/
+.coverage
+reports/
+htmlcov/
