@@ -13,10 +13,11 @@ import axios from 'axios'
       fetch() {
         axios.get("http://localhost:5000").then((response) => {
           console.log(response.data);
-          alert(response.data);
+          console.log(this.$store.state.money);
+          this.$store.commit('calc')
+          console.log(this.$store.state.money);
         }).catch((error) => {
           console.log(error.data);
-          alert(error.data);
         });
       }
     }
