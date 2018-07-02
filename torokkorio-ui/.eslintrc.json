@@ -1,0 +1,12 @@
+{
+  "extends": ["vue", "plugin:vue/recommended"],
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "Vue": true
+  },
+  "rules": {
+    "indent": ["error", 2]
+  }
+}

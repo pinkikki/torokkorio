@@ -9,7 +9,7 @@ const store = new Vuex.Store({
     money: 0
   },
   mutations: {
-    calc(state) {
+    calc (state) {
       state.money = state.money * 1.08
     }
   }
