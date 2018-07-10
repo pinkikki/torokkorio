@@ -1,14 +1,22 @@
 <template>
-  <div>
+  <div class="grid-container fluid">
+    <div class="grid-y medium-grid-frame">
+      <header/>
+      <router-view/>
+    </div>
     <p>Monetization</p>
     <button @click.prevent="fetch()">fetch</button>
   </div>
 </template>
 
 <script>
+import header from './views/Header'
 import axios from 'axios'
 
 export default {
+  components: {
+    header
+  },
   methods: {
     fetch () {
       axios.get('http://localhost:5000').then((response) => {

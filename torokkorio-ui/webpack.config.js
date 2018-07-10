@@ -1,4 +1,6 @@
 const { VueLoaderPlugin } = require('vue-loader')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 module.exports = {
   entry: './src/index.js',
   output: {
@@ -33,6 +35,10 @@ module.exports = {
     contentBase: 'dest'
   },
   plugins: [
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(),
+    new HtmlWebpackPlugin({
+      filename: 'index.html',
+      template: 'index.html'
+    })
   ]
 }
