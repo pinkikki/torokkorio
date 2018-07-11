@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Header from './views/Header.vue'
+import Header from './views/ApplicationHeader.vue'
 
 Vue.use(VueRouter)
 

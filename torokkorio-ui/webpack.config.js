@@ -1,5 +1,7 @@
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   entry: './src/index.js',
@@ -22,6 +24,14 @@ module.exports = {
       {
         test: /\.(css|sass|scss)$/,
         loader: 'sass-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[ext]'
+        }
       }
     ]
   },
@@ -39,6 +49,14 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: 'index.html'
-    })
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve('./src/assets'),
+        to: path.resolve('./dest/assets'),
+        ignore: ['.*']
+      }
+    ])
+
   ]
 }

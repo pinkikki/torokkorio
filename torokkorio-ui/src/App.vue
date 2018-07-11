@@ -1,21 +1,21 @@
 <template>
   <div class="grid-container fluid">
     <div class="grid-y medium-grid-frame">
-      <header/>
+      <appheader/>
       <router-view/>
+      <p>Monetization</p>
+      <button @click.prevent="fetch()">fetch</button>
     </div>
-    <p>Monetization</p>
-    <button @click.prevent="fetch()">fetch</button>
   </div>
 </template>
 
 <script>
-import header from './views/Header'
+import appheader from './views/ApplicationHeader'
 import axios from 'axios'
 
 export default {
   components: {
-    header
+    appheader
   },
   methods: {
     fetch () {
