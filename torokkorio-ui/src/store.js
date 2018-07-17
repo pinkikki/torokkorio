@@ -1,17 +1,13 @@
 import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
+import revenue from './store/revenue'
 
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
-  state: {
-    money: 0
-  },
-  mutations: {
-    calc (state) {
-      state.money = state.money * 1.08
-    }
+  modules: {
+    revenue
   }
 })
 
