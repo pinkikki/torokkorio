@@ -32,3 +32,4 @@ __pycache__/
 .coverage
 reports/
 htmlcov/
+torokkorio-tools/
