@@ -3,12 +3,16 @@
     <div class="grid-x grid-margin-x align-center">
       <div class="cell small-4">
         <label>買ったもの
-          <input v-model="item" type="text">
+          <input
+            v-model="item"
+            type="text">
         </label>
       </div>
       <div class="cell small-4">
         <label>値段
-          <input v-model="price" type="text">
+          <input
+            v-model="price"
+            type="text">
         </label>
       </div>
     </div>
@@ -19,35 +23,35 @@
         class="success button">記録
       </button>
     </div>
-    <div>item:{{item}}</div>
-    <div>price:{{price}}</div>
+    <div>item:{{ item }}</div>
+    <div>price:{{ price }}</div>
   </form>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+
 export default {
   computed: {
     item: {
-      get() {
+      get () {
         return this.$store.state.revenue.item
       },
-      set(value) {
-        this.$store.dispatch('setItem', value)
+      set (value) {
+        this.setItem(value)
       }
     },
     price: {
-      get() {
+      get () {
         return this.$store.state.revenue.price
       },
-      set(value) {
-        this.$store.dispatch('setPrice', value)
+      set (value) {
+        this.setPrice(value)
       }
     }
   },
   methods: {
-    save () {
-      this.$store.dispatch('save')
-    }
+    ...mapActions(['setItem', 'setPrice', 'save'])
   }
 }
 </script>

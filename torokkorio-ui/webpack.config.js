@@ -19,7 +19,8 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        loader: 'babel-loader?presets=es2015'
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets=vue-app'
       },
       {
         test: /\.(css|sass|scss)$/,

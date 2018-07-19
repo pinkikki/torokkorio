@@ -4,26 +4,26 @@ export default {
     price: 0
   },
   actions: {
-    save({commit}) {
+    save ({ commit }) {
       // ここでサーバの記録APIを実行する
       commit('clear')
     },
-    setItem({commit}, item) {
-      commit('setItem', {item})
+    setItem ({ commit }, item) {
+      commit('setItem', { item })
     },
-    setPrice({commit}, price) {
-      commit('setPrice', {price})
+    setPrice ({ commit }, price) {
+      commit('setPrice', { price })
     }
 
   },
   mutations: {
-    setItem(state, payload) {
+    setItem (state, payload) {
       state.item = payload.item
     },
-    setPrice(state, payload) {
+    setPrice (state, payload) {
       state.price = payload.price
     },
-    clear(state) {
+    clear (state) {
       state.item = ''
       state.price = 0
     }
