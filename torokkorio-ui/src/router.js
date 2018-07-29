@@ -1,12 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Header from './views/ApplicationHeader.vue'
+import Login from './views/Login.vue'
+import Revenue from './views/Revenue.vue'
 
 Vue.use(VueRouter)
 
 const router = new VueRouter({
   routes: [
-    {path: '/header', component: Header}
+    { path: '/', component: Login },
+    { path: '/revenue', component: Revenue }
   ]
 })
 

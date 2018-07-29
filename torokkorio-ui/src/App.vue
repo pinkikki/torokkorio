@@ -3,7 +3,6 @@
     <div class="grid-y medium-grid-frame">
       <appheader/>
       <router-view/>
-      <p>Monetization</p>
       <button @click.prevent="fetch()">fetch</button>
     </div>
   </div>
